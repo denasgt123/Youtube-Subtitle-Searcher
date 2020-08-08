@@ -1,0 +1,99 @@
+@font-face {
+  font-family: 'NunitoLight';
+  src: url('../fonts/Nunito-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+* {
+  font-family: 'NunitoLight', sans-serif;
+  color: #fff;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #2c3e50;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+h1 {
+  font-size: 72px;
+  color: white;
+}
+
+mark {
+  color: black;
+  background-color: #f2ef97;
+  font-weight: 600;
+}
+
+li {
+  margin: 10px 0; 
+}
+
+pre {
+  color: white;
+}
+
+input[type="text"], textarea, input[type="text"]:focus {
+  border: 1px solid #293847;
+  color: white;
+  height: 40px;
+  width: 500px !important;
+  margin: 0 7px; 
+  border-radius: 10px;
+  background: #2c3e50 !important;
+  box-shadow: inset 5px 5px 11px #202d3a, 
+              inset -5px -5px 11px #384f66;
+
+}
+
+.btn {
+  color: white;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #2f4256, #283848);
+  box-shadow:  5px 5px 11px #202d3a, 
+               -5px -5px 11px #384f66;
+}
+
+.btn:focus {
+  border-radius: 10px;
+  background: #2c3e50;
+  box-shadow: inset 5px 5px 11px #202d3a, 
+              inset -5px -5px 11px #384f66;
+}
+
+.clean {
+  height: 40px;
+}
+
+.title {
+  width: 100%;
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+}
+
+.form {
+  margin-left: 50px;
+}
+
+.neumorph {
+  border-radius: 10px;
+  background: #2c3e50;
+  box-shadow:  5px 5px 11px #202d3a, 
+               -5px -5px 11px #384f66;
+}
+
+.container .row-object .col .card {
+  min-height: 300px;
+}

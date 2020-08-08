@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- BOOTSTRAP CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Vue</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="container">
+      <h1 class="title">Subtitle App Searcher</h1>
+      <form>
+        <div class="form-row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Youtube's URL" v-model="url">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Search Keyword" v-model="keyword">
+          </div>
+          <div class="col">
+            <button class="clean btn" @click="clean"><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="container mt-5">
+      <div class="card neumorph">
+        <div class="card-header">
+          <span class="float-left">Result : {{ halaman.total }}</span>
+          <span class="float-right">Page : {{ halaman.page }}</span>
+        </div>
+        <div class="card-body title">
+          <ul>
+            <li v-for="(hasil, i) in result" :key="i" class="">
+              <span v-html="hasil.text"></span>
+              <a :href="`${url}&t=${hasil.start}s`" target="_blank">Youtube</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-end">
+              <li class="page-item">
+                <a class="page-link" href="#" @click="navigation('first')" :disabled="!halaman['first']">First</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#" @click="navigation('prev')" :disabled="!halaman['prev']">Prev</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#" @click="navigation('next')" :disabled="!halaman['next']">Next</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#" @click="navigation('last')" :disabled="!halaman['last']">Last</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="title">Showing Object</h3>
+
+    <div class="container">
+      <div class="row row-object">
+      <div class="col">
+        <div class="card neumorph mb-5">
+          <div class="card-body title">
+            <pre class="halaman">{{ convertToString(halaman) }}</pre>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card neumorph mb-5">
+          <div class="card-body title">
+            <pre class="data">{{ convertToString(result) }}</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- VUE.JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <!-- FontAwesome CDN -->
+  <script src="https://kit.fontawesome.com/3069b5925c.js" crossorigin="anonymous"></script>
+
+  <script src="js/index.js"></script>
+  <script src="js/custom.js"></script>
+</body>
+</html>
